@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import React from 'react';
 import './App.css' ;
-import Info from './components/Info';
+import { BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import Home from './pages/Home';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
+import About from './pages/About';
+import Navigation from './Navigation';
+
+
 
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     
    <div>
   
-    <Info>BlogApp</Info>
-    <div className="flex flex-col items-center justify-center w-screen h-screen">
-      <h1 className="mb-5 text-5xl font-bold">
-        Welcome to{" "}
-        
-      </h1>
-      <p>
-      BloggerApp is a simple blog application that allows users to
-        effortlessly share their stories and connect with their audience.
-      </p>
-    </div>
+    <Router>
+      <Navigation/>
+      <Switch>
+   
+        <Route path = "/" exact component={Home}></Route>
+        <Route path = "/BlogPost" component={BlogPost}></Route>
+        <Route path = "BlogList" component={BlogList}></Route>
+        <Route path ="/About" component={About}></Route>
+    </Switch>
+     
+    </Router>
    </div>
   )
 }
