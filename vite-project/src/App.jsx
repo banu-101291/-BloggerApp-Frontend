@@ -9,19 +9,12 @@ import Navigation from './Navigation';
 
 
 
-
-
-
-
 function App() {
-
 
   return (
     
    <div>
-    
-  
-    <Router>
+      <Router>
       <Navigation/>
       <Switch>
    

@@ -13,7 +13,7 @@ const Navigation =() => {
                 <li><Link to="/" className="text-gray-300 hover:text-white">Home</Link></li>
                 <li><Link to = "/BlogPost" className="text-gray-300 hover:text-white">Post</Link></li>
                 <li><Link to = "/BlogList" className="text-gray-300 hover:text-white">BlogList</Link></li>
-                <li><Link to ="/About" className="text-gray-300 hover:text-white">About</Link></li>
+                <li><Link to ="/About">About</Link></li>
             </ul>
             </div>
         </nav>

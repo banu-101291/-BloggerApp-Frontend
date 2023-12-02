@@ -3,7 +3,7 @@ import React from "react";
 const BlogList = () => {
   return (
     <div >
-      <h2 style={styles.title}>Best Kitchen Appliances</h2>
+      <h2>Best Kitchen Appliances</h2>
       <ul >
         <li >#1 - Upgrade Your Cooking with an Air Fryer</li>
         <li >#2 - Cyber Monday’s Hottest Microwave Deals</li>

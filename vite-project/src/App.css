@@ -41,5 +41,18 @@
   color: #888;
 }
 
-/* \
- */
+body{
+  
+    background-image:url('https://media.kasperskydaily.com/wp-content/uploads/sites/92/2023/09/29081131/dangerous-apps-in-app-store-featured.jpg');
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
+    min-height: '100vh';
+}
+
+body image{
+  position: absolute;
+  top:0;
+  margin: 0;
+  z-index: -5;
+    
+}
