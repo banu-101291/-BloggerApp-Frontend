@@ -1,0 +1,38 @@
+/* App.css */
+
+/* Global styles can go here */
+
+nav {
+    background-color: rgb(91, 49, 101);
+    color: white;
+    padding: 5px;
+    top: 0;
+    left: 0;
+
+ 
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content:right;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+  
+ul li {
+    margin: 0 ;
+    padding: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #ff9900;
+  }
+  
