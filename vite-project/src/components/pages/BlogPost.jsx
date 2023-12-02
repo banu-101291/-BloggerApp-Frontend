@@ -3,9 +3,11 @@ import React from 'react';
 const BlogPost = () => {
   return (
    
+    <div style={{ marginTop: '20px', padding: '10px' }}>
+        <h1>Blog post</h1>
     <div className="row">
       <div className="col-md-4 mb-4">
-      <h1>Blog Post</h1>
+     
         <div className="card">
           <img src="https://thedecorpalette.com/wp-content/uploads/2023/11/air-fryer.png.webp" className="card-img-top" alt="Air Fryer" />
           <div className="card-body">
@@ -38,6 +40,7 @@ const BlogPost = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
