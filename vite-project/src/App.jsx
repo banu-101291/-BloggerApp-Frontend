@@ -7,6 +7,7 @@ import BlogPost from './components/pages/BlogPost';
 import About from './components/pages/About';
 import Navigation from './Navigation';
 import BlogEditor from './components/BlogEditor';
+import BlogForm from './components/BlogForm';
 
 
 
@@ -16,7 +17,7 @@ function App() {
     
    <div>
       <Router>
-      <Navigation/>
+      <Navigation/>npm run dev
       <Switch>
    
         <Route path = "/" exact component={Home}></Route>
@@ -24,6 +25,7 @@ function App() {
         <Route path = "/BlogList" component={BlogList}></Route>
         <Route path ="/About" component={About}></Route>
         <Route path = "/BlogEditor" component={BlogEditor}></Route>
+        <Route path = "/Edit/:id" components = {BlogForm}></Route>
     </Switch>
      
     </Router>
