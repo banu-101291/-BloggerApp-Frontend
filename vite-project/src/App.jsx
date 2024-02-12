@@ -5,9 +5,11 @@ import Home from './components/pages/Home';
 import BlogList from './components/pages/BlogList';
 import BlogPost from './components/pages/BlogPost';
 import About from './components/pages/About';
+import Login from './components/pages/LoginPage';
 import Navigation from './Navigation';
-import BlogEditor from './components/BlogEditor';
+import PostForm from './components/PostForm';
 import BlogForm from './components/BlogForm';
+import LoginPage from './components/pages/LoginPage';
 
 
 
@@ -24,7 +26,8 @@ function App() {
         <Route path = "/BlogPost" component={BlogPost}></Route>
         <Route path = "/BlogList" component={BlogList}></Route>
         <Route path ="/About" component={About}></Route>
-        <Route path = "/BlogEditor" component={BlogEditor}></Route>
+        <Route path = '/LoginPage' component={LoginPage}></Route>
+        <Route path = "/PostForm" component={PostForm}></Route>
         <Route path = "/Edit/:id" components = {BlogForm}></Route>
     </Switch>
      
