@@ -1,42 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container,Form } from 'react-bootstrap';
 
-function LoginPage({ onLogin }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you can implement your authentication logic.
-    // For simplicity, I'll just pass the username to the onLogin function.
-    onLogin(username);
-  };
+const Login = () => {
+  
+  const [FormData,SetFormData] = useState({
 
-  return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+  email:"",
+  password:''
+
+})
+const handleChange =() =>{
+
+}
+  return(
+    <Container>
+      <h4>Login</h4>
+    <Form>
+     <Form.Group>
+    <Form.Label>Email</Form.Label>
+    <Form.Control type="email" name="email"  value={FormData.name} onChange={handleChange} required/>
+    </Form.Group>
+    <Form.Group>
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" name="password"  value={FormData.name} onChange={handleChange} required/>
+    </Form.Group>
+</Form>
+</Container>
+  )
 }
 
-export default LoginPage;
+
+
+export default Login;

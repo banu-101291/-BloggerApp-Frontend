@@ -1,40 +1,35 @@
 import React from 'react';
-import './App.css' ;
-import { BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import BlogList from './components/pages/BlogList';
 import BlogPost from './components/pages/BlogPost';
 import About from './components/pages/About';
-import Login from './components/pages/LoginPage';
 import Navigation from './Navigation';
 import PostForm from './components/PostForm';
 import BlogForm from './components/BlogForm';
-import LoginPage from './components/pages/LoginPage';
-
-
+import SignUp from './components/pages/Signup';
+import Login from './components/pages/LoginPage';
 
 function App() {
-
   return (
-    
-   <div>
-      <Router>
-      <Navigation/>npm run dev
-      <Switch>
-   
-        <Route path = "/" exact component={Home}></Route>
-        <Route path = "/BlogPost" component={BlogPost}></Route>
-        <Route path = "/BlogList" component={BlogList}></Route>
-        <Route path ="/About" component={About}></Route>
-        <Route path = '/LoginPage' component={LoginPage}></Route>
-        <Route path = "/PostForm" component={PostForm}></Route>
-        <Route path = "/Edit/:id" components = {BlogForm}></Route>
-    </Switch>
-     
-    </Router>
-   </div>
+    <Router>
   
-  )
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/BlogPost" element={<BlogPost />} />
+          <Route path="/BlogList" element={<BlogList />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/PostForm" element={<PostForm />} />
+          <Route path="/Edit/:id" element={<BlogForm />} />
+          <Route path="/Create" element={<BlogForm />} />
+        </Routes>
+   
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './BlogForm.css'; 
 
-
 function BlogForm() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams(); // If editing, id will be provided in the URL
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    fetch('/api/blogs')
-      .then(response => response.json())
-      .then(data => setBlogs(data))
-      .catch(error => console.error('Error fetching blogs:', error));
-  }, []);
-  
+    if (id) {
+      fetchBlogDetails();
+    }
+  }, [id]);
 
   async function fetchBlogDetails() {
     try {
@@ -41,7 +38,7 @@ function BlogForm() {
         body: JSON.stringify({ title, content }),
       });
       if (response.ok) {
-        history.push('/');
+        navigate('/');
       } else {
         console.error('Failed to save blog:', response.statusText);
       }
@@ -49,7 +46,6 @@ function BlogForm() {
       console.error('Error saving blog:', error);
     }
   }
-  
 
   async function deleteBlog() {
     if (window.confirm('Are you sure you want to delete this blog?')) {
@@ -58,7 +54,7 @@ function BlogForm() {
           method: 'DELETE',
         });
         if (response.ok) {
-          history.push('/');
+          navigate('/');
         } else {
           console.error('Failed to delete blog');
         }
