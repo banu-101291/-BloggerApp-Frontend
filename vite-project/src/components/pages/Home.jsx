@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button"; // Assuming Button component exists and is imported correctly
+import './styles/Home.css'
 
 const Home = () => {
   return (
@@ -7,7 +8,7 @@ const Home = () => {
       <h1 className="mb-5 text-5xl font-bold">
         Welcome to BloggerApp
       </h1>
-      <p>
+      <p class="center">
         BloggerApp is a simple blog application that allows users to
         effortlessly share their stories and connect with their audience.
       </p>

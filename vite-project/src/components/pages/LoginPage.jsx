@@ -1,35 +1,49 @@
-import React from 'react';
-import { Container,Form } from 'react-bootstrap';
-
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import './styles/LoginPage.css'; // Import the CSS file
 
 const Login = () => {
-  
-  const [FormData,SetFormData] = useState({
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    });
 
-  email:"",
-  password:''
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
 
-})
-const handleChange =() =>{
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Implement your login logic here
+        console.log("Form data:", formData);
+        // After successful login, you may want to redirect the user to another page
+        // history.push('/dashboard');
+    };
 
+    return (
+        <div className="container">
+            <div className="form-container">
+                <h4>Login</h4>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" name="password" value={formData.password} onChange={handleChange} required />
+                    </Form.Group>
+                    <Button variant="primary" type="submit" className="button">Login</Button>
+                    {/* Add link to create blog if needed */}
+                    {/* <Link to='/create'>Create Blog</Link> */}
+                </Form>
+            </div>
+        </div>
+    );
 }
-  return(
-    <Container>
-      <h4>Login</h4>
-    <Form>
-     <Form.Group>
-    <Form.Label>Email</Form.Label>
-    <Form.Control type="email" name="email"  value={FormData.name} onChange={handleChange} required/>
-    </Form.Group>
-    <Form.Group>
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" name="password"  value={FormData.name} onChange={handleChange} required/>
-    </Form.Group>
-</Form>
-</Container>
-  )
-}
-
-
 
 export default Login;

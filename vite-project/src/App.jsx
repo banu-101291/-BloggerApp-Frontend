@@ -25,7 +25,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/PostForm" element={<PostForm />} />
           <Route path="/Edit/:id" element={<BlogForm />} />
-          <Route path="/Create" element={<BlogForm />} />
+          <Route path="/BlogForm" element={<BlogForm />} />
         </Routes>
    
     </Router>

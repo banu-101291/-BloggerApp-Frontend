@@ -2,12 +2,13 @@
 
 /* Global styles can go here */
 
-nav {
+ nav {
     background-color: rgb(91, 49, 101);
     color: white;
     padding: 5px;
     top: 0;
     left: 0;
+    width: 100%;
 
  
   }
@@ -35,4 +36,31 @@ ul li {
   a:hover {
     color: #ff9900;
   }
+   
+
+
+   /* nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
   
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+   */

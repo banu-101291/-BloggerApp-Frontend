@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -43,7 +42,7 @@
 
 body{
   
-    background-image:url('https://media.kasperskydaily.com/wp-content/uploads/sites/92/2023/09/29081131/dangerous-apps-in-app-store-featured.jpg');
+    background-image:url('https://www.mendix.com/wp-content/uploads/blog-post-header-app-fatigue-2.png');
     background-size: 'cover';
     background-repeat: 'no-repeat';
     min-height: '100vh';
