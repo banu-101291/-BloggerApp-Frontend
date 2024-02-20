@@ -52,7 +52,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './styles/signUp.css';
+import './styles/SignUp.css';
 
 
 
