@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './styles/LoginPage.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    
+  const navigate = useNavigate()
+
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -21,9 +25,11 @@ const Login = () => {
         // Implement your login logic here
         console.log("Form data:", formData);
         // After successful login, you may want to redirect the user to another page
-        // history.push('/dashboard');
+        //history.push('/dashboard');
+        navigate('/dashboard')
     };
 
+  
     return (
         <div className="container">
             <div className="form-container">

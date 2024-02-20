@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserProvider } from './UserContext';
 import Home from './components/pages/Home';
 import BlogList from './components/pages/BlogList';
 import BlogPost from './components/pages/BlogPost';
@@ -9,12 +10,13 @@ import Navigation from './Navigation';
 import PostForm from './components/PostForm';
 import BlogForm from './components/BlogForm';
 import SignUp from './components/pages/Signup';
-import Login from './components/pages/LoginPage';
+import Login from './components/pages/LoginPage'
+import Dashboard from './user/Dashboard';
 
 function App() {
   return (
-    <Router>
-  
+    <UserProvider>
+      <Router>
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,12 +25,14 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
+          {/* Protected routes */}
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/PostForm" element={<PostForm />} />
           <Route path="/Edit/:id" element={<BlogForm />} />
           <Route path="/BlogForm" element={<BlogForm />} />
         </Routes>
-   
-    </Router>
+      </Router>
+    </UserProvider>
   );
 }
 
