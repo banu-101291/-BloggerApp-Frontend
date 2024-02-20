@@ -8,7 +8,7 @@ const PostForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/posts', { title, content });
+      await axios.post('https://bloger-6vju.onrender.com', { title, content });
       alert('Post saved successfully!');
     } catch (error) {
       console.error('Error saving post:', error);

@@ -9,30 +9,31 @@ import About from './components/pages/About';
 import Navigation from './Navigation';
 import PostForm from './components/PostForm';
 import BlogForm from './components/BlogForm';
-import SignUp from './components/pages/Signup';
 import Login from './components/pages/LoginPage'
 import Dashboard from './user/Dashboard';
+import SignUp from './components/pages/SignUp';
+import { AuthProvider } from './context/auth';
 
 function App() {
   return (
-    <UserProvider>
-      <Router>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/BlogPost" element={<BlogPost />} />
-          <Route path="/BlogList" element={<BlogList />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Login" element={<Login />} />
-          {/* Protected routes */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/PostForm" element={<PostForm />} />
-          <Route path="/Edit/:id" element={<BlogForm />} />
-          <Route path="/BlogForm" element={<BlogForm />} />
-        </Routes>
-      </Router>
-    </UserProvider>
+    // <UserProvider>
+    <Router>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<UserProvider><Home /></UserProvider>} />
+        <Route path="/BlogPost" element={<BlogPost />} />
+        <Route path="/BlogList" element={<BlogList />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Login" element={<Login />} />
+        {/* Protected routes */}
+        <Route path="/dashboard" element={<AuthProvider><Dashboard /></AuthProvider>} />
+        <Route path="/PostForm" element={<PostForm />} />
+        <Route path="/Edit/:id" element={<BlogForm />} />
+        <Route path="/BlogForm" element={<BlogForm />} />
+      </Routes>
+    </Router>
+    // </UserProvider>
   );
 }
 

@@ -17,7 +17,7 @@ function BlogForm() {
 
   async function fetchBlogDetails() {
     try {
-      const response = await fetch(`/api/blogs/${id}`);
+      const response = await fetch(`https://bloger-6vju.onrender.com/${id}`);
       const data = await response.json();
       setTitle(data.title);
       setContent(data.content);
@@ -29,7 +29,7 @@ function BlogForm() {
   async function saveBlog() {
     try {
       const method = id ? 'PUT' : 'POST';
-      const url = id ? `/api/blogs/${id}` : '/api/blogs';
+      const url = id ? `https://bloger-6vju.onrender.com//${id}` : 'https://bloger-6vju.onrender.com/';
       const response = await fetch(url, {
         method,
         headers: {
@@ -50,7 +50,7 @@ function BlogForm() {
   async function deleteBlog() {
     if (window.confirm('Are you sure you want to delete this blog?')) {
       try {
-        const response = await fetch(`/api/blogs/${id}`, {
+        const response = await fetch(`https://bloger-6vju.onrender.com/${id}`, {
           method: 'DELETE',
         });
         if (response.ok) {
