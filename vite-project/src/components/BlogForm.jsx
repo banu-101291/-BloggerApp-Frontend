@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './BlogForm.css'; 
@@ -29,7 +31,7 @@ function BlogForm() {
   async function saveBlog() {
     try {
       const method = id ? 'PUT' : 'POST';
-      const url = id ? `https://bloger-6vju.onrender.com//${id}` : 'https://bloger-6vju.onrender.com/';
+      const url =  'http://localhost:9000/blog/';
       const response = await fetch(url, {
         method,
         headers: {

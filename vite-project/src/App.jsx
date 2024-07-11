@@ -27,7 +27,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         {/* Protected routes */}
-        <Route path="/dashboard" element={<AuthProvider><Dashboard /></AuthProvider>} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/PostForm" element={<PostForm />} />
         <Route path="/Edit/:id" element={<BlogForm />} />
         <Route path="/BlogForm" element={<BlogForm />} />

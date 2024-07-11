@@ -53,6 +53,8 @@ import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './styles/SignUp.css';
+import Axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -63,6 +65,8 @@ const SignUp = () => {
         password: ""
     });
 
+    const navigate = useNavigate()
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -70,6 +74,7 @@ const SignUp = () => {
             [name]: value
         }));
     };
+    `   `
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -81,13 +86,23 @@ const SignUp = () => {
             setFormData({
                 name: "",
                 email: "",
-                password: ""
+                password: "",
+                phone: ""
             });
 
         } catch (error) {
             console.error("Error submitting form:", error);
             // Handle error, if any
         }
+
+        Axios.post('http://localhost:9000/api/v1/auth/register', {
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            phone: formData.phone
+          }).then((res) => {
+            navigate('/dashboard');
+          });
     };
 
     return (
@@ -105,7 +120,11 @@ const SignUp = () => {
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" value={formData.password} onChange={handleChange} required />
+                        <Form.Control type="password" name="password" value={formData.phone} onChange={handleChange} required />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Phone number</Form.Label>
+                        <Form.Control type="phonenumber" name="phone " value={formData.phone} onChange={handleChange} required />
                     </Form.Group>
                     <Button variant="primary" type="submit" className="custom-button">Register</Button>
 

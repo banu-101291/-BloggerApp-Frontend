@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './styles/LoginPage.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
+import Axios from 'axios';
 
 const Login = () => {
     
@@ -23,12 +24,16 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Implement your login logic here
-        console.log("Form data:", formData);
+        //console.log('Form data:', formData);
         // After successful login, you may want to redirect the user to another page
         //history.push('/dashboard');
-        navigate('/dashboard')
-    };
-
+        Axios.post('http://localhost:9000/api/v1/auth/login', {
+          email: formData.email,
+          password: formData.password,
+        }).then((res) => {
+          navigate('/dashboard');
+        });
+      };
   
     return (
         <div className="container">
